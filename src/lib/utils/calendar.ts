@@ -19,7 +19,7 @@ function toIcsDate(date: Date): string {
 
 /** Naive UID — good enough for a one-off calendar invite */
 function uid(title: string, date: Date): string {
-  return `${date.getTime()}-${title.replace(/\s+/g, '-').toLowerCase()}@hiresettle`;
+  return `${date.getTime()}-${title.replace(/\s+/g, '-').toLowerCase()}@stellarsorter`;
 }
 
 /**
@@ -33,7 +33,7 @@ export function buildIcs(event: CalendarEvent): string {
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//HireSettle//Retention Reminder//EN',
+    'PRODID:-//StellarSorter//Retention Reminder//EN',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'BEGIN:VEVENT',
