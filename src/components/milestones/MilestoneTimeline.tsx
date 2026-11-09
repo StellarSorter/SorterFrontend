@@ -123,7 +123,7 @@ function buildIcs({
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//HireSettle//EN',
+    'PRODID:-//StellarSorter//EN',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'BEGIN:VEVENT',
