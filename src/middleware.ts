@@ -26,7 +26,7 @@ export function middleware(request: NextRequest) {
   // Always allow public paths through
   if (PUBLIC_PATHS.some((p) => pathname.startsWith(p))) return NextResponse.next();
 
-  const token = request.cookies.get('hiresettle_token')?.value;
+  const token = request.cookies.get('stellarsorter_token')?.value;
 
   const redirectToLogin = () => {
     const loginUrl = new URL('/auth/login', request.url);
@@ -46,7 +46,7 @@ export function middleware(request: NextRequest) {
     if (exp !== null && exp < nowSec) {
       // Expire the stale cookie while redirecting
       const response = redirectToLogin();
-      response.cookies.set('hiresettle_token', '', { path: '/', maxAge: 0 });
+      response.cookies.set('stellarsorter_token', '', { path: '/', maxAge: 0 });
       return response;
     }
   }
