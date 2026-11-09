@@ -48,7 +48,7 @@ export function Sidebar() {
           <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center">
             <ShieldCheck className="w-4 h-4 text-white" />
           </div>
-          <span className="font-semibold text-gray-900 text-sm">HireSettle</span>
+          <span className="font-semibold text-gray-900 text-sm">StellarSorter</span>
         </div>
         {/* Close button — mobile only */}
         <button
