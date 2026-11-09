@@ -78,7 +78,7 @@ export default function ChainEventsPage() {
         <div>
           <h1 className="text-xl font-semibold text-gray-900">Chain Events</h1>
           <p className="text-sm text-gray-500 mt-0.5">
-            On-chain activity recorded from the HireSettle contract
+            On-chain activity recorded from the StellarSorter contract
           </p>
         </div>
       </div>
