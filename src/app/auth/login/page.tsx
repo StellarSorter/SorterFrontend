@@ -82,7 +82,7 @@ function LoginContent() {
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-600 mb-4 shadow-lg">
             <ShieldCheck className="w-7 h-7 text-white" />
           </div>
-          <h1 className="text-2xl font-semibold text-gray-900">HireSettle</h1>
+          <h1 className="text-2xl font-semibold text-gray-900">StellarSorter</h1>
           <p className="text-sm text-gray-500 mt-1">Recruiter fee escrow on Stellar</p>
         </div>
 
