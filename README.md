@@ -27,7 +27,7 @@ This is **Repo 3 of 3** in the StellarSorter project:
 
 ---
 
-## What's Different From ChainSettle Frontend
+## Feature Highlights
 
 ### Retention timer UI
 
@@ -50,9 +50,9 @@ The list page has a "As company / As recruiter" toggle so users who participate 
 
 When an engagement's status is `ReplacementRequested`, a prominent amber banner appears explaining the situation and showing the recruiter what to do next (submit proof for the replacement candidate).
 
-### New contract calls
+### Contract calls
 
-`unlockMilestone()` and `requestReplacement()` in `lib/stellar/contract.ts` — not present in ChainSettle frontend.
+`unlockMilestone()` and `requestReplacement()` are defined in `lib/stellar/contract.ts`.
 
 ---
 
