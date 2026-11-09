@@ -18,7 +18,7 @@ apiClient.interceptors.request.use((config) => {
     // can be removed entirely (the browser will send the cookie automatically).
     const cookieToken = document.cookie
       .split('; ')
-      .find((row) => row.startsWith('hiresettle_token='))
+      .find((row) => row.startsWith('stellarsorter_token='))
       ?.split('=')[1];
 
     if (cookieToken) {
