@@ -63,7 +63,7 @@ export async function signNonce(nonce: string, networkPassphrase: string): Promi
     networkPassphrase,
   })
     .addOperation(
-      Operation.manageData({ name: 'hiresettle_nonce', value: Buffer.from(nonce) }),
+      Operation.manageData({ name: 'stellarsorter_nonce', value: Buffer.from(nonce) }),
     )
     .setTimeout(30)
     .build();
