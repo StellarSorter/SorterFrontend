@@ -1,14 +1,14 @@
-# HireSettle — Frontend Repo
+# StellarSorter — Frontend Repo
 
 > **Next.js 14 frontend for milestone-based recruiter fee escrow on Stellar**
 
-This is **Repo 3 of 3** in the HireSettle project:
+This is **Repo 3 of 3** in the StellarSorter project:
 
 | Repo | Description |
 |------|-------------|
-| `hiresettle-contract` | Soroban smart contract (Rust) |
-| `hiresettle-backend` | NestJS REST API + retention scheduler |
-| `hiresettle-frontend` ← you are here | Next.js 14 + Freighter wallet UI |
+| `stellarsorter-contract` | Soroban smart contract (Rust) |
+| `stellarsorter-backend` | NestJS REST API + retention scheduler |
+| `stellarsorter-frontend` ← you are here | Next.js 14 + Freighter wallet UI |
 
 ---
 
@@ -59,7 +59,7 @@ When an engagement's status is `ReplacementRequested`, a prominent amber banner 
 ## Project Structure
 
 ```
-hiresettle-frontend/
+stellarsorter-frontend/
 ├── .env.example
 ├── .gitignore
 ├── next.config.js
@@ -109,7 +109,7 @@ hiresettle-frontend/
     │       └── index.ts            ← Formatting + retention timer helpers
     │
     ├── types/index.ts              ← All TypeScript types
-    └── styles/globals.css          ← Tailwind + HireSettle design tokens
+    └── styles/globals.css          ← Tailwind + StellarSorter design tokens
 ```
 
 ---
