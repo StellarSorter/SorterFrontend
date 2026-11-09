@@ -3,7 +3,7 @@ import '@/styles/globals.css';
 import { Providers } from './providers';
 
 export const metadata: Metadata = {
-  title: { default: 'HireSettle', template: '%s | HireSettle' },
+  title: { default: 'StellarSorter', template: '%s | StellarSorter' },
   description: 'Milestone-based recruiter fee escrow on Stellar Soroban',
   icons: { icon: '/favicon.svg' },
 };
