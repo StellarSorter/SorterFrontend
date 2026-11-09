@@ -22,7 +22,7 @@ function getJwtExp(token: string): number | null {
 }
 
 /**
- * Set the `hiresettle_token` cookie so its max-age matches the JWT's own
+ * Set the `stellarsorter_token` cookie so its max-age matches the JWT's own
  * expiry.  Falls back to 7 days when the claim is absent.
  * The cookie is NOT HttpOnly here because the edge middleware needs to read it;
  * for full HttpOnly security wire up the /api/auth/session route handler noted
@@ -31,11 +31,11 @@ function getJwtExp(token: string): number | null {
 function setTokenCookie(token: string): void {
   const exp = getJwtExp(token);
   const maxAge = exp ? Math.max(0, exp - Math.floor(Date.now() / 1000)) : 7 * 24 * 60 * 60;
-  document.cookie = `hiresettle_token=${token}; path=/; max-age=${maxAge}; SameSite=Lax`;
+  document.cookie = `stellarsorter_token=${token}; path=/; max-age=${maxAge}; SameSite=Lax`;
 }
 
 function clearTokenCookie(): void {
-  document.cookie = 'hiresettle_token=; path=/; max-age=0; SameSite=Lax';
+  document.cookie = 'stellarsorter_token=; path=/; max-age=0; SameSite=Lax';
 }
 
 // ---------------------------------------------------------------------------
@@ -73,9 +73,9 @@ export const useAuthStore = create<AuthState>((set) => ({
       // NOTE: for full HttpOnly security, replace this with a call to a
       // Next.js route handler (e.g. POST /api/auth/session) that sets the
       // cookie server-side with HttpOnly; Secure; SameSite=Strict, and
-      // coordinate the equivalent logout endpoint with hiresettle-backend.
+      // coordinate the equivalent logout endpoint with stellarsorter-backend.
       // The token should then NOT be stored in localStorage at all.
-      localStorage.setItem('hiresettle_address', address);
+      localStorage.setItem('stellarsorter_address', address);
       setTokenCookie(token);
     }
     set({ address, token, user, isConnected: true, isHydrated: true });
@@ -85,7 +85,7 @@ export const useAuthStore = create<AuthState>((set) => ({
 
   logout: () => {
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('hiresettle_address');
+      localStorage.removeItem('stellarsorter_address');
       clearTokenCookie();
     }
     set({ address: null, token: null, user: null, isConnected: false, isHydrated: true });
@@ -93,12 +93,12 @@ export const useAuthStore = create<AuthState>((set) => ({
 
   rehydrate: () => {
     if (typeof window !== 'undefined') {
-      const address = localStorage.getItem('hiresettle_address');
+      const address = localStorage.getItem('stellarsorter_address');
       // The token lives in the cookie; read it from document.cookie so the
       // in-memory value stays in sync (axios reads from the cookie directly).
       const cookieToken = document.cookie
         .split('; ')
-        .find((row) => row.startsWith('hiresettle_token='))
+        .find((row) => row.startsWith('stellarsorter_token='))
         ?.split('=')[1] ?? null;
 
       if (cookieToken && address) {
@@ -110,11 +110,11 @@ export const useAuthStore = create<AuthState>((set) => ({
           return;
         }
         // Token is expired – clear stale data and fall through to isHydrated=true
-        localStorage.removeItem('hiresettle_address');
+        localStorage.removeItem('stellarsorter_address');
         clearTokenCookie();
       } else {
         // Clean up any orphaned localStorage entry
-        if (address && !cookieToken) localStorage.removeItem('hiresettle_address');
+        if (address && !cookieToken) localStorage.removeItem('stellarsorter_address');
       }
     }
     // No valid session found — mark as hydrated so pages know auth is "logged out"
