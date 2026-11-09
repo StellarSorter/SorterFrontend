@@ -1,7 +1,7 @@
 /**
  * lib/stellar/contract.ts
  *
- * Builds Soroban transactions for every HireSettle contract function.
+ * Builds Soroban transactions for every StellarSorter contract function.
  * Flow: build → simulate → assemble → sign via Freighter → submit → poll
  */
 
